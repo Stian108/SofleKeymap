@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Bspc |   A  |   R  |   S  |   T  |   G  |-------.    ,-------|   M  |   N  |   E  |   I  |   O  |  Æ   |
  * |------+------+------+------+------+------|  Mute |    |  Play |------+------+------+------+------+------|
- * |LShift|   Z  |   X  |   C  |  D  |   V  |-------|    |-------|   K  |   H  |   ,  |   .  |   -  |RShift|
+ * |LShift|   Z  |   X  |   C  |   D  |   V  |-------|    |-------|   K  |   H  |   ,  |   .  |   -  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   NO_Q,   NO_W,    NO_E,    NO_R,    NO_T,                      NO_Y,    NO_U,    NO_I,    NO_O,    NO_P,  NO_ARNG, \
   KC_BSPC,  NO_A,   NO_S,    NO_D,    NO_F,    NO_G,                      NO_H,    NO_J,    NO_K,    NO_L, NO_OSTR,    NO_AE, \
   KC_LSFT,  NO_Z,   NO_X,    NO_C,    NO_V,    NO_B, KC_MUTE,    KC_MPLY, NO_N,    NO_M, NO_COMM,  NO_DOT, NO_MINS,  KC_RSFT, \
-                 KC_LGUI,KC_LALT,KC_LCTRL, MO(_LOWER), KC_ENT,      KC_SPC,  MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI \
+             KC_LGUI, KC_LALT, KC_LCTRL, MO(_LOWER),  KC_ENT,     KC_SPC,  MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * | Bspc |   !  |   @  |   #  |   $  |   %  |-------.    ,-------|   ^  |   &  |   *  |   (  |   )  |   '  |
  * |------+------+------+------+------+------|  Mute |    |  Play |------+------+------+------+------+------|
- * | Shift| ~   |  "   |  +   |   {  |   }  |-------|    |-------|   [  |   ]  |   <  |   >  |   ?  | Shift|
+ * | Shift|   ~  |   "  |   +  |   {   |  }  |-------|    |-------|   [  |   ]  |   <  |   >  |   ?  | Shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
@@ -76,7 +76,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                     NO_BSLS, NO_SLSH,  NO_GRV, NO_ACUT,  NO_EQL, NO_PIPE, \
   _______, NO_EXLM,   NO_AT, NO_HASH,  NO_DLR, NO_PERC,                     NO_CIRC, NO_AMPR, NO_ASTR, NO_LPRN, NO_RPRN, NO_QUOT, \
   _______, NO_TILD, NO_DQUO, NO_PLUS, NO_LCBR, NO_RCBR, _______,   _______, NO_LBRC, NO_RBRC, NO_LABK, NO_RABK, NO_QUES, _______, \
-                  _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______\
+                    _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______\
 ),
 /* RAISE
  * ,----------------------------------------.                    ,-----------------------------------------.
@@ -97,7 +97,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______,  KC_INS,  KC_PSCR,   KC_APP,  XXXXXXX, XXXXXXX,                        KC_PGUP,  XXXXXXX,   KC_UP, XXXXXXX,  XXXXXXX, KC_BSPC, \
   _______, KC_LALT,  KC_LCTL,  KC_LSFT,  XXXXXXX, KC_CAPS,                        KC_PGDN,  KC_LEFT, KC_DOWN, KC_RGHT,   KC_DEL, KC_BSPC, \
   _______, XXXXXXX,  XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX,  _______,       _______,  XXXXXXX,KC_HOME, XXXXXXX,  KC_END,  XXXXXXX, _______, \
-                         _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______ \
+                       _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______ \
 ),
 /* ADJUST
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -114,11 +114,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *            `----------------------------------'           '------''---------------------------'
  */
   [_ADJUST] = LAYOUT( \
-  XXXXXXX,   XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX,                        KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20, XXXXXXX, \
-  XXXXXXX,DF(_QWERTY),XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX,                        KC_F21,  KC_F22,  KC_F23,  KC_F24, XXXXXXX, XXXXXXX, \
-  XXXXXXX,   XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, \
-  XXXXXXX,   XXXXXXX, XXXXXXX,DF(_COLEMAK), XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, \
-                         _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______ \
+  XXXXXXX,     XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX,                        KC_F16,  KC_F17,  KC_F18,  KC_F19,  KC_F20, XXXXXXX, \
+  XXXXXXX, DF(_QWERTY), XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX,                        KC_F21,  KC_F22,  KC_F23,  KC_F24, XXXXXXX, XXXXXXX, \
+  XXXXXXX,     XXXXXXX, XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX,                       XXXXXXX, KC_VOLD, KC_MUTE, KC_VOLU, XXXXXXX, XXXXXXX, \
+  XXXXXXX,     XXXXXXX, XXXXXXX, DF(_COLEMAK), XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX, XXXXXXX, KC_MPRV, KC_MPLY, KC_MNXT, XXXXXXX, XXXXXXX, \
+                             _______, _______, _______, _______, _______,     _______, _______, _______, _______, _______ \
   )
 };
 
