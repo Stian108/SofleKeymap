@@ -2,12 +2,22 @@
 #include QMK_KEYBOARD_H
 #include "keymap_norwegian.h"
 
-enum sofle_layers {
+enum custom_layers {
     _COLEMAK,
     _QWERTY,
     _LOWER,
     _RAISE,
     _ADJUST,
+};
+
+
+enum custom_keycodes {
+  // Undead characters
+  UD_DIAE = SAFE_RANGE,
+  UD_GRV,
+  UD_CIRC,
+  UD_ACUT,
+  UD_TILD
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -73,9 +83,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 [_LOWER] = LAYOUT( \
   _______,   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,                       KC_F6,   KC_F7,   KC_F8,   KC_F9,  KC_F10, _______,\
-  _______,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                     NO_BSLS, NO_SLSH,  NO_GRV, NO_ACUT,  NO_EQL, NO_PIPE, \
-  _______, NO_EXLM,   NO_AT, NO_HASH,  NO_DLR, NO_PERC,                     NO_CIRC, NO_AMPR, NO_ASTR, NO_LPRN, NO_RPRN, NO_QUOT, \
-  _______, NO_TILD, NO_DQUO, NO_PLUS, NO_LCBR, NO_RCBR, _______,   _______, NO_LBRC, NO_RBRC, NO_LABK, NO_RABK, NO_QUES, _______, \
+  _______,  KC_F11,  KC_F12,  KC_F13,  KC_F14,  KC_F15,                     NO_BSLS, NO_SLSH,  UD_GRV, UD_ACUT,  NO_EQL, NO_PIPE, \
+  _______, NO_EXLM,   NO_AT, NO_HASH,  NO_DLR, NO_PERC,                     UD_CIRC, NO_AMPR, NO_ASTR, NO_LPRN, NO_RPRN, NO_QUOT, \
+  _______, UD_TILD, NO_DQUO, NO_PLUS, NO_LCBR, NO_RCBR, _______,   _______, NO_LBRC, NO_RBRC, NO_LABK, NO_RABK, NO_QUES, _______, \
                   _______, _______, _______, _______, _______,       _______, _______, _______, _______, _______\
 ),
 /* RAISE
@@ -124,6 +134,30 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
+}
+
+bool undead(uint16_t  character, bool pressed) {
+  if (pressed) {
+    tap_code16(character);
+    tap_code(KC_SPC);
+  }
+  return false;
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case UD_DIAE:
+            return undead(NO_DIAE, record->event.pressed);
+        case UD_GRV:
+            return undead(NO_GRV, record->event.pressed);
+        case UD_CIRC:
+            return undead(NO_CIRC, record->event.pressed);
+        case UD_ACUT:
+            return undead(NO_ACUT, record->event.pressed);
+        case UD_TILD:
+            return undead(NO_TILD, record->event.pressed);
+    }
+    return true;
 }
 
 
