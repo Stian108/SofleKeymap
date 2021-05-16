@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  Mute |    |  Play |------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   D  |   V  |-------|    |-------|   K  |   H  |   ,  |   .  |   -  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |LOWER | /Space  /       \Enter \  |RAISE | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   NO_Q,   NO_W,    NO_F,    NO_P,    NO_B,                      NO_J,    NO_L,    NO_U,    NO_Y, NO_OSTR,  NO_ARNG, \
   KC_BSPC,  NO_A,   NO_R,    NO_S,    NO_T,    NO_G,                      NO_M,    NO_N,    NO_E,    NO_I,    NO_O,    NO_AE, \
   KC_LSFT,  NO_Z,   NO_X,    NO_C,    NO_D,    NO_V, KC_MUTE,    KC_MPLY, NO_K,    NO_H, NO_COMM,  NO_DOT, NO_MINS,  KC_RSFT, \
-                 KC_LGUI,KC_LALT,KC_LCTRL, MO(_LOWER), KC_ENT,      KC_SPC,  MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI \
+                 KC_LGUI,KC_LALT,KC_LCTRL, MO(_LOWER), KC_SPC,      KC_ENT,  MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI \
 ),
 /*
  * QWERTY
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  Mute |    |  Play |------+------+------+------+------+------|
  * |LShift|   Z  |   X  |   C  |   V  |   B  |-------|    |-------|   N  |   M  |   ,  |   .  |   -  |RShift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |LOWER | /Space  /       \Enter \  |RAISE | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_TAB,   NO_Q,   NO_W,    NO_E,    NO_R,    NO_T,                      NO_Y,    NO_U,    NO_I,    NO_O,    NO_P,  NO_ARNG, \
   KC_BSPC,  NO_A,   NO_S,    NO_D,    NO_F,    NO_G,                      NO_H,    NO_J,    NO_K,    NO_L, NO_OSTR,    NO_AE, \
   KC_LSFT,  NO_Z,   NO_X,    NO_C,    NO_V,    NO_B, KC_MUTE,    KC_MPLY, NO_N,    NO_M, NO_COMM,  NO_DOT, NO_MINS,  KC_RSFT, \
-             KC_LGUI, KC_LALT, KC_LCTRL, MO(_LOWER),  KC_ENT,     KC_SPC,  MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI \
+             KC_LGUI, KC_LALT, KC_LCTRL, MO(_LOWER),  KC_SPC,     KC_ENT,  MO(_RAISE), KC_RCTRL, KC_RALT, KC_RGUI \
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -77,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  Mute |    |  Play |------+------+------+------+------+------|
  * | Shift|   ~  |   "  |   +  |   {   |  }  |-------|    |-------|   [  |   ]  |   <  |   >  |   ?  | Shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |LOWER | /Space  /       \Enter \  |RAISE | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|  Mute |    |  Play |------+------+------+------+------+------|
  * |Shift |      |      |      |      |      |-------|    |-------|      | LStr |      | LEnd |      | Shift|
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |LOWER | /Space  /       \Enter \  |RAISE | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|       |    |       |------+------+------+------+------+------|
  * |      |      |      |COLEMK|      |      |-------|    |-------|      | PREV | PLAY | NEXT |      |      |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
- *            | LGUI | LAlt | LCTR |LOWER | /Enter  /       \Space \  |RAISE | RCTR | RAlt | RGUI |
+ *            | LGUI | LAlt | LCTR |LOWER | /Space  /       \Enter \  |RAISE | RCTR | RAlt | RGUI |
  *            |      |      |      |      |/       /         \      \ |      |      |      |      |
  *            `----------------------------------'           '------''---------------------------'
  */
